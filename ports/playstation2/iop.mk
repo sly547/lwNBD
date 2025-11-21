@@ -4,6 +4,10 @@ BIN2C = $(PS2SDK)/bin/bin2c
 
 IOP_CFLAGS += $(CFLAGS)
 
+ifeq ($(IOPCORE_DEBUG),1)
+IOP_CFLAGS += -DDEBUG
+endif
+
 IOP_BIN = lwnbdsvr.irx
 PORT_DIR = ports/playstation2
 IOP_OBJS += $(PORT_DIR)/lwnbd_irx.o $(PORT_DIR)/exports.o $(PORT_DIR)/imports.o

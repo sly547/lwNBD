@@ -14,6 +14,7 @@
 #include <lwnbd.h>
 #include "irx_imports.h"
 #include "../../plugins/memory/memory.h"
+#include "config.h"
 
 IRX_ID(APP_NAME, 1, 1);
 static int nbd_tid;
@@ -66,7 +67,9 @@ int _start(int argc, char **argv)
     //        .desc = "DVD-ROM rom",
     //    };
 
+    printf("HELLO");
     nbdsrv = lwnbd_server_init(nbd_server_init);
+    printf("hi there");
 
     if (argc > 1) {
         struct lwnbd_config *config = (struct lwnbd_config *)argv[1];
